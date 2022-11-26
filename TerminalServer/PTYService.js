@@ -12,7 +12,7 @@ class PTY {
   startPtyProcess(){
     this.ptyProcess = pty.spawn(this.shell, [], {
       name: "xterm-color",
-      cwd: process.env.HOME,
+      cwd: process.env.PWD,
       env: process.env
     });
     this.ptyProcess.on("data", data => {

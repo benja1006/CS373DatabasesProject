@@ -30,7 +30,7 @@ export class TerminalUI {
   }
   attachTo(container){
     this.terminal.open(container);
-    this.sendInput('cd /app\n');
+    //this.sendInput('cd /app\n');
     //this.sendInput('cd app\n');
     this.terminal.write("Terminal connected");
     this.terminal.write("");

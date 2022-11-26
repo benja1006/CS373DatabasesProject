@@ -38,11 +38,13 @@ async function start() {
 
 
 // Better to start on DOMContentLoaded. So, we know terminal-container is loaded
-var terminal = start();
+var terminal = await start();
 
 function button1(terminal){
   //document.terminal.sendInput('ls\n');
   terminal.sendInput('ls\n');
 }
 
-document.getElementById("javascript").onclick = button1(terminal);
+document.getElementById("javascript").onclick = function () {
+  button1(terminal);
+}
