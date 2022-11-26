@@ -22,7 +22,7 @@ export class TerminalUI {
     this.terminal.write(text);
   }
   prompt(){
-    this.terminal.write(`\\r\\n$ `)
+    this.terminal.write("\r\n")
   }
 
   sendInput(input){
@@ -30,6 +30,8 @@ export class TerminalUI {
   }
   attachTo(container){
     this.terminal.open(container);
+    this.sendInput('cd /app\n');
+    //this.sendInput('cd app\n');
     this.terminal.write("Terminal connected");
     this.terminal.write("");
     this.prompt();
