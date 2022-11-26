@@ -1,0 +1,18 @@
+Welcome to my CS373 Project
+To run this project, make sure you have docker installed and updated
+Also, make sure to turn off any services using the ports 3306 or 3000
+
+There is no need to install node as that will be done inside a vm
+
+Once you are ready, navigate to this folder in terminal and run the following scripts
+1. docker-build.sh
+2. run.sh
+
+This will create the docker container and insert you into the command line of the vm
+It is running a version of debian (I think)
+
+From here, you can run any of the install scripts using `node install (table)`
+though it is recommended that they are run in the order found in order.txt to avoid
+foreign key errors.
+
+Then, when you would like to leave, type `exit` and then run stop.sh

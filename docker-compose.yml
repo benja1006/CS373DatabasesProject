@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  tournament_tracker:
+    container_name: tournament_tracker
+    image: tournament_tracker:latest
+    entrypoint: /bin/bash -c "/wait && npm install && node main.js "
+    command: tail -F anything
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=5
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+    depends_on:
+      - "mysql"
+    ports:
+      - "127.0.0.1:3000:3000"
+  mysql:
+    container_name: resultTrackerDB
+    image: mysql:latest
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=ResultTrackerBenjaShare
+    ports:
+      - "3306:3306"
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
+volumes:
+  mysql-data:

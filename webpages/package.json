@@ -1,0 +1,12 @@
+{
+  "name": "CS373Project",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^9.1.2",
+    "socket.io-client": "^4.5.4",
+    "xterm": "^5.0.0"
+  }
+}
