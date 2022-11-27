@@ -70,7 +70,20 @@ function setDropdown () {
   });
 
 }
+
+function query1 () {
+  let form = document.getElementById("Q1");
+  alert('Q1 submitted');
+}
+
+function query2 () {
+  let form = document.getElementById("Q2");
+  alert('Q2 submitted');
+}
 document.getElementById("insertButton").onclick = function () {
   insert(terminal);
 }
+document.getElementById("Q1").onclick = query1;
+document.getElementById("Q2").onclick = query2;
+
 setDropdown();
