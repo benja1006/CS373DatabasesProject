@@ -1,5 +1,6 @@
 //import { Terminal } from "xterm";
 //import "xterm/css/xterm.css"; // DO NOT forget importing xterm.css
+//import { FitAddon } from './xterm-addon-fit';
 
 export class TerminalUI {
   constructor(socket) {
@@ -29,7 +30,10 @@ export class TerminalUI {
     this.socket.emit("input", input);
   }
   attachTo(container){
+    const fitAddon = new FitAddon.FitAddon();
+    this.terminal.loadAddon(fitAddon);
     this.terminal.open(container);
+    fitAddon.fit();
     //this.sendInput('cd /app\n');
     //this.sendInput('cd app\n');
     this.terminal.write("Terminal connected");
