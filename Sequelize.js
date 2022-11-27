@@ -51,7 +51,7 @@ Teams.init({
     autoIncrement: true
   },
   team_name: {
-    type: DataTypes.STRING(20),
+    type: DataTypes.STRING(50),
     allowNull: false
   },
   founded: {
@@ -60,7 +60,12 @@ Teams.init({
   },
   disbanded:  {
     type: DataTypes.DATEONLY,
-    allowNull: true
+    allowNull: true,
+    set(value) {
+      if(value == ''){
+        this.setDataValue('disbanded', null);
+      }
+    }
   }
 }, {
   sequelize,
@@ -75,7 +80,7 @@ Tournaments.init({
     autoIncrement: true
   },
   tournament_name:  {
-    type: DataTypes.STRING(50),
+    type: DataTypes.STRING(200),
     allowNull: false
   },
   region: {
@@ -103,7 +108,12 @@ Earnings.init({
   },
   prize_money: {
     type: DataTypes.INTEGER.UNSIGNED,
-    defaultValue: "0"
+    defaultValue: "0",
+    set(value) {
+      if(value == ''){
+        this.setDataValue('prize_money', 0);
+      }
+    }
   },
   position: {
     type: DataTypes.INTEGER.UNSIGNED,
@@ -168,7 +178,13 @@ Members.init({
     primaryKey: true
   },
   end_date: {
-    type: DataTypes.DATEONLY
+    type: DataTypes.DATEONLY,
+    allowNull: true,
+    set(value) {
+      if(value == ''){
+        this.setDataValue('end_date', null);
+      }
+    }
   }
 }, {
   sequelize,
