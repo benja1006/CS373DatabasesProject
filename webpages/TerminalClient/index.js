@@ -46,7 +46,7 @@ var terminal = await start();
 function insert(terminal){
   let dropdown = document.getElementById("insertTable")
   let table = dropdown.value;
-  terminal.sendInput('node ~/app/insert ' + table + '\n');
+  terminal.sendInput('node /app/insert ' + table + '\n');
   //console.log('node ~/app/insert ' + table + '\n');
   let i = 0;
   for(i = 0; i < options.length; i++){
