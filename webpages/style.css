@@ -1,0 +1,8 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+#terminal-container {
+  height: 500px;
+}

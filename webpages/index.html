@@ -3,28 +3,37 @@
   <head>
     <title>Terminal in Browser</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
+    <h1> Benja's CS 373 Databases Final Project </h1>
     <div class='column'>
-      <div id="terminal-container" style="height: 500px; width: 800px"></div>
-      <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css" />
-      <script src="./node_modules/xterm/lib/xterm.js"></script>
-      <script src="./node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
-      <script src="/socket.io/socket.io.js"></script>
-      <script type="module" src="./TerminalClient/index.js"></script>
+      <h3> A terminal to access the vm </h3>
+      <div id="terminal-container"></div>
+      <div>
+        <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css" />
+        <script src="./node_modules/xterm/lib/xterm.js"></script>
+        <script src="./node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="module" src="./TerminalClient/index.js"></script>
+      </div>
       <button id='insertButton'>Insert</button>
       <select id='insertTable'></select>
     </div>
     <div class='column'>
-      <dl>
-        <dt id='Q1'>Query 1</dt>
-        <dt id='Q2'>Query 2</dt>
-        <dt id='Q3'>Query 3</dt>
-        <dt id='Q4'>Query 4</dt>
-        <dt id='Q5'>Query 5</dt>
-        <dt id='Q6'>Query 6</dt>
-      </dl>
+      <h3> Queries on the database </h3>
+      <!-- Insert Buttons for two queries -->
+      <form>
+        <input type="text" id="Q1year" name="year">
+        <input type="text" id="Q1month" name="month">
+        <input type="submit" value="Run Query">
+      </form>
+      <form>
+        <input type="text" id="Q2player_id" name="player_id">
+        <input type="text" id="Q2team_id" name="team_id">
+        <input type="submit" value="Run Query">
+      </form>
     </div>
 
   </body>
