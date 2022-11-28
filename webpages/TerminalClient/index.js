@@ -71,19 +71,24 @@ function setDropdown () {
 
 }
 
-function query1 () {
-  let form = document.getElementById("Q1");
-  alert('Q1 submitted');
+function query1 (terminal) {
+  let month = document.getElementById('Q1month').value
+  let year = document.getElementById('Q1year').value
+  terminal.sendInput('node /app/querries Q1 ' + year + ' ' + month + '\n');
 }
 
-function query2 () {
+function query2 (terminal) {
   let form = document.getElementById("Q2");
   alert('Q2 submitted');
 }
 document.getElementById("insertButton").onclick = function () {
   insert(terminal);
 }
-document.getElementById("Q1").onclick = query1;
-document.getElementById("Q2").onclick = query2;
+document.getElementById("Q1").onclick = () => {
+  query1(terminal);
+}
+document.getElementById("Q2").onclick = () => {
+  query2(terminal);
+}
 
 setDropdown();

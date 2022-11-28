@@ -20,15 +20,15 @@ sequelize.sync().then(async () => {
     let month = args[2]
     Players.findAll({
       where: {
-        date: db.where(db.fn('YEAR', db.col('birthday')), year),
-        [Op.and]: db.where(db.fn('MONTH', db.col('birthday')), month)
+        date: sequelize.where(sequelize.fn('YEAR', sequelize.col('birthday')), year),
+        [Op.and]: sequelize.where(sequelize.fn('MONTH', sequelize.col('birthday')), month)
       },
       include: [{
         model: Earnings,
         required: true
       }]
-    }).then(
-
+    }).then((players) => {
+      console.log(players[0].player_id + ' ' + players[0].tag, players[0].nationality, players[0].earnings.reduce((accumulator, earning)))
     });
   }
   if(args[0] == 'Q2'){
