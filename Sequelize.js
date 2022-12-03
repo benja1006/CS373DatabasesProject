@@ -65,6 +65,9 @@ Teams.init({
       if(value == ''){
         this.setDataValue('disbanded', null);
       }
+      else{
+        this.setDataValue('disbanded', value)
+      }
     }
   }
 }, {
@@ -112,6 +115,9 @@ Earnings.init({
     set(value) {
       if(value == ''){
         this.setDataValue('prize_money', 0);
+      }
+      else{
+        this.setDataValue('prize_money', value)
       }
     }
   },
@@ -183,6 +189,9 @@ Members.init({
     set(value) {
       if(value == ''){
         this.setDataValue('end_date', null);
+      }
+      else{
+        this.setDataValue('end_date', value);
       }
     }
   }
