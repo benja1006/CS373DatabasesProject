@@ -75,11 +75,14 @@ function query1 (terminal) {
   let month = document.getElementById('Q1month').value
   let year = document.getElementById('Q1year').value
   terminal.sendInput('node /app/querries Q1 ' + year + ' ' + month + '\n');
+  alert('query1')
 }
 
 function query2 (terminal) {
-  let form = document.getElementById("Q2");
-  alert('Q2 submitted');
+  let player_id = document.getElementById('Q2player_id').value;
+  let team_id = document.getElementById('Q2team_id').value;
+  terminal.sendInput('node /app/querries Q2 ' + player_id + ' ' + team_id + '\n');
+  alert('Test')
 }
 document.getElementById("insertButton").onclick = function () {
   insert(terminal);

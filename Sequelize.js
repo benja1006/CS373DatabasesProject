@@ -6,7 +6,8 @@ const sequelize = new Sequelize('ResultTrackerBenjaShare', SQLUSERNAME, SQLPASSW
   dialect: 'mysql',
   define: {
     timestamps: false
-  }
+  },
+  logging: false
 });
 
 

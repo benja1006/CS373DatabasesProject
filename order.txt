@@ -1,6 +1,0 @@
-node insert players
-node insert teams
-node insert tournaments
-node insert earnings
-node insert matches
-node insert members
