@@ -5,14 +5,20 @@ Also, make sure to turn off any services using the ports 3306 or 3000
 There is no need to install node as that will be done inside a vm
 
 Once you are ready, navigate to this folder in terminal and run the following scripts
-1. docker-build.sh
-2. run.sh
+1. ./docker-build.sh
+2. ./run.sh
 
-This will create the docker container and insert you into the command line of the vm
-It is running a version of debian (I think)
+This will create the docker container and start the program. All access is done
+via a webpage hosted at localhost:3000. It should automatically open, but if
+it says webpage not found just wait a few seconds then reload the page.
 
-From here, you can run any of the install scripts using `node install (table)`
-though it is recommended that they are run in the order found in order.txt to avoid
-foreign key errors.
+From here, you can run any of the insert scripts by clicking the insert button
+at the bottom of the screen. The dropdown allows you to choose what table to insert.
+I recommend you insert them in the order given to avoid foreign key errors.
+The button auto increments to the next table, so you can just press the button 5 times.
 
-Then, when you would like to leave, type `exit` and then run stop.sh
+Once the database is populated, you can run queries using the forms on the right
+
+Then, when you would like to leave, go back to the terminal window and run ./stop.sh
+
+Let me know if you have any questions or suggestions, or if anything breaks
